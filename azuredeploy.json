@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2021-01-01",
+      "name": "[parameters('webAppName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+      }
+    }
+  ],
+  "parameters": {
+    "webAppName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "hostingPlanName": {
+      "type": "string"
+    }
+  }
+}
