@@ -2,13 +2,14 @@ trigger:
 - main  # Adjust this to your default branch name
 
 pool:
-  vmImage: 'ubuntu-latest'  # Use a Microsoft-hosted agent
+  vmImage: 'ubuntu-latest'  # Use a Microsoft-hosted agent image
 
 steps:
-- task: AzureCLI@2
+- task: AzurePowerShell@5
   inputs:
-    azureSubscription: 'MyAzureServiceConnection'  # Name of your Azure service connection
-    scriptType: 'bash'
-    scriptPath: '$(System.DefaultWorkingDirectory)/scripts/deploy.sh'  # Path to your deployment script
-    arguments: '--resource-group webAppName --template-file $(System.DefaultWorkingDirectory)/azuredeploy.json --parameters $(System.DefaultWorkingDirectory)/azuredeploy.parameters.json'
-  displayName: 'Deploy Azure Web App using ARM Template'
+    azureSubscription: 'MyAzureServiceConnection'  # Replace with your Azure service connection name
+    ScriptPath: '$(System.DefaultWorkingDirectory)/scripts/deploy-webapp.ps1'  # Path to your PowerShell script
+    ScriptArguments: '-ResourceGroupName MyResourceGroup -TemplateFilePath $(System.DefaultWorkingDirectory)/azuredeploy.json -ParametersFilePath $(System.DefaultWorkingDirectory)/azuredeploy.parameters.json -Location "East US"'
+    azurePowerShellVersion: 'LatestVersion'
+  displayName: 'Deploy Azure Web App using Azure PowerShell'
+
