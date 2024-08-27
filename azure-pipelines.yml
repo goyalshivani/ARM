@@ -7,8 +7,8 @@ pool:
 steps:
 - task: AzureCLI@2
   inputs:
-    azureSubscription: ''  # Name of your Azure service connection
+    azureSubscription: 'MyAzureServiceConnection'  # Name of your Azure service connection
     scriptType: 'bash'
     scriptPath: '$(System.DefaultWorkingDirectory)/scripts/deploy.sh'  # Path to your deployment script
-    arguments: '--resource-group <Your-Resource-Group> --template-file $(System.DefaultWorkingDirectory)/azuredeploy.json --parameters $(System.DefaultWorkingDirectory)/azuredeploy.parameters.json'
+    arguments: '--resource-group webAppName --template-file $(System.DefaultWorkingDirectory)/azuredeploy.json --parameters $(System.DefaultWorkingDirectory)/azuredeploy.parameters.json'
   displayName: 'Deploy Azure Web App using ARM Template'
