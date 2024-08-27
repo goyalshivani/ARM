@@ -1,0 +1,11 @@
+{
+  "webAppName": {
+    "value": "my-web-app-name"
+  },
+  "location": {
+    "value": "North Europe"
+  },
+  "hostingPlanName": {
+    "value": "my-hosting-plan"
+  }
+}
