@@ -5,11 +5,17 @@ pool:
   vmImage: 'ubuntu-latest'  # Use a Microsoft-hosted agent image
 
 steps:
+# - task: AzurePowerShell@5
+#   inputs:
+#     azureSubscription: 'MyAzureServiceConnection'  # Replace with your Azure service connection name
+#     ScriptPath: '$(System.DefaultWorkingDirectory)/scripts/deploy-webapp.ps1'  # Path to your PowerShell script
+#     ScriptArguments: '-ResourceGroupName MyResourceGroup -TemplateFilePath $(System.DefaultWorkingDirectory)/azuredeploy.json -ParametersFilePath $(System.DefaultWorkingDirectory)/azuredeploy.parameters.json -Location "East US"'
+#     azurePowerShellVersion: 'LatestVersion'
+#   displayName: 'Deploy Azure Web App using Azure PowerShell'
 - task: AzurePowerShell@5
   inputs:
-    azureSubscription: 'MyAzureServiceConnection'  # Replace with your Azure service connection name
-    ScriptPath: '$(System.DefaultWorkingDirectory)/scripts/deploy-webapp.ps1'  # Path to your PowerShell script
-    ScriptArguments: '-ResourceGroupName MyResourceGroup -TemplateFilePath $(System.DefaultWorkingDirectory)/azuredeploy.json -ParametersFilePath $(System.DefaultWorkingDirectory)/azuredeploy.parameters.json -Location "East US"'
-    azurePowerShellVersion: 'LatestVersion'
+      azureSubscription: 'Free Trial(28e56ee1-eeb3-42a1-a92d-75577eaabd9a)'
+      ScriptType: 'FilePath'
+      azurePowerShellVersion: 'LatestVersion'
   displayName: 'Deploy Azure Web App using Azure PowerShell'
 
