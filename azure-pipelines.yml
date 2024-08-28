@@ -2,7 +2,7 @@ trigger:
 - main  # Adjust this to your default branch name
 
 pool:
-  vmImage: 'ubuntu-latest'  # Use a Microsoft-hosted agent image
+  vmImage: 'windows-latest'  # Use a Microsoft-hosted agent image
 
 steps:
 # - task: AzurePowerShell@5
