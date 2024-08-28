@@ -14,8 +14,9 @@ steps:
 #   displayName: 'Deploy Azure Web App using Azure PowerShell'
 - task: AzurePowerShell@5
   inputs:
-      azureSubscription: 'Free Trial(28e56ee1-eeb3-42a1-a92d-75577eaabd9a)'
-      ScriptType: 'FilePath'
-      azurePowerShellVersion: 'LatestVersion'
+    azureSubscription: 'Free Trial(28e56ee1-eeb3-42a1-a92d-75577eaabd9a)'
+    ScriptType: 'FilePath'
+    ScriptPath: 'scripts/deploy-webapp.ps1'
+    azurePowerShellVersion: 'LatestVersion'
   displayName: 'Deploy Azure Web App using Azure PowerShell'
 
