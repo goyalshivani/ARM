@@ -12,14 +12,14 @@ $sku = "B1"
  
 # Create a resource group
 Write-Host "Creating resource group: $resourceGroup"
-New-AzResourceGroup -Name $resourceGroup -Location $location -ErrorAction Stop
+New-AzResourceGroup -Name $resourceGroup -Location $location 
  
 # Create an App Service Plan
 Write-Host "Creating App Service Plan: $appServicePlanName"
-New-AzAppServicePlan -ResourceGroupName $resourceGroup -Location $location -Name $appServicePlanName -Tier $sku -ErrorAction Stop
+New-AzAppServicePlan -ResourceGroupName $resourceGroup -Location $location -Name $appServicePlanName -Tier $sku 
  
 # Create a Web App
 Write-Host "Creating Web App: $webAppName"
-New-AzWebApp -ResourceGroupName $resourceGroup -Name $webAppName -Location $location -AppServicePlan $appServicePlanName -ErrorAction Stop
+New-AzWebApp -ResourceGroupName $resourceGroup -Name $webAppName -Location $location -AppServicePlan $appServicePlanName 
  
 Write-Host "Web App '$webAppName' created successfully."
