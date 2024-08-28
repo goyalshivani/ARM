@@ -1,4 +1,4 @@
-$resourceGroup="use-grp"
+$resourceGroup="new-grp"
 $location="North Europe"
 $appServiceName="newservicename098723476528765"
 $webAppName="webapp09873376549987"
